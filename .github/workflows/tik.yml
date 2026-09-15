@@ -1,0 +1,15 @@
+name: Tik
+on:
+  schedule:
+    - cron: "45 18 * * *"
+      timezone: "Europe/Amsterdam"
+    - cron: "50 18 * * *"          # zelfde moment, maar dan in UTC uitgedrukt
+  workflow_dispatch:
+jobs:
+  tik:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "UTC nu     : $(date -u '+%H:%M:%S')"
+          echo "event      : ${{ github.event_name }}"
+          echo "schedule   : [${{ github.event.schedule }}]"
