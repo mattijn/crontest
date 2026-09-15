@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: "45 18 * * *"
       timezone: "Europe/Amsterdam"
-    - cron: "50 18 * * *"          # zelfde moment, maar dan in UTC uitgedrukt
+    - cron: "50 16 * * *"          # 18:50 lokaal, maar als UTC opgeschreven
   workflow_dispatch:
 jobs:
   tik:
